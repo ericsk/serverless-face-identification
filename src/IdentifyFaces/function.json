@@ -1,0 +1,20 @@
+{
+  "bindings": [
+    {
+      "name": "image",
+      "type": "blobTrigger",
+      "direction": "in",
+      "path": "faces/{img}",
+      "connection": "skfaceblind_STORAGE",
+      "dataType": "binary"
+    },
+    {
+      "type": "table",
+      "name": "outputTable",
+      "tableName": "idlog",
+      "connection": "skfaceblind_STORAGE",
+      "direction": "out"
+    }
+  ],
+  "disabled": false
+}

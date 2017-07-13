@@ -1,0 +1,29 @@
+{
+  "bindings": [
+    {
+      "type": "eventHubTrigger",
+      "name": "person",
+      "direction": "in",
+      "path": "learningq",
+      "connection": "skfaceblind_RootManageSharedAccessKey_EVENTHUB",
+      "cardinality": "one",
+      "consumerGroup": "$Default"
+    },
+    {
+      "type": "table",
+      "name": "personTable",
+      "tableName": "persons",
+      "connection": "skfaceblind_STORAGE",
+      "direction": "out"
+    },
+    {
+      "type": "table",
+      "name": "personEntity",
+      "tableName": "persons",
+      "connection": "skfaceblind_STORAGE",
+      "filter": "PartitionKey eq 'LearnedFace'",
+      "direction": "in"
+    }
+  ],
+  "disabled": false
+}
